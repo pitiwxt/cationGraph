@@ -46,44 +46,44 @@ export const initialNodes = [
 ];
 
 export const initialEdges = [
-    { id: 'e_start_g1', source: 'start', target: 'g1_ppt', type: 'actionEdge', data: { label: 'เติม HCl 6M', icon: '💧', description: 'แคทไอออนกลุ่ม 1 ตกตะกอนเป็นคลอไรด์ที่ไม่ละลายน้ำ' } },
+    { id: 'e_start_g1', source: 'start', target: 'g1_ppt', type: 'actionEdge', data: { label: 'เติม HCl 6M', icon: '💧', reactionType: 'การตกตะกอน', description: 'แคทไอออนกลุ่ม 1 ตกตะกอนเป็นคลอไรด์ที่ไม่ละลายน้ำ' } },
     { id: 'e_start_sol', source: 'start', target: 'g234_sol', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀' } },
 
     // G1 Branches
-    { id: 'e_g1_water1', source: 'g1_ppt', target: 'pb_sol', type: 'actionEdge', data: { label: 'น้ำร้อน', icon: '♨️', description: 'PbCl2 ละลายในน้ำร้อน แยกตัวออกมาได้' } },
+    { id: 'e_g1_water1', source: 'g1_ppt', target: 'pb_sol', type: 'actionEdge', data: { label: 'น้ำร้อน', icon: '♨️', reactionType: 'การละลาย', description: 'PbCl2 ละลายในน้ำร้อน แยกตัวออกมาได้' } },
     { id: 'e_g1_water2', source: 'g1_ppt', target: 'ag_hg_ppt', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀', description: 'ส่วนที่เป็นตะกอนยังคงอยู่' } },
 
-    { id: 'e_pb_conf', source: 'pb_sol', target: 'pb_conf', type: 'actionEdge', data: { label: 'เติม K2CrO4', icon: '💧' } },
+    { id: 'e_pb_conf', source: 'pb_sol', target: 'pb_conf', type: 'actionEdge', data: { label: 'เติม K2CrO4', icon: '💧', reactionType: 'การตกตะกอน' } },
 
-    { id: 'e_ag_hg_nh3_1', source: 'ag_hg_ppt', target: 'hg_conf', type: 'actionEdge', data: { label: 'เติม NH3 6M', icon: '💧', description: 'ปรอทเกิด disproportionation เป็นตะกอนสีดำ' } },
-    { id: 'e_ag_hg_nh3_2', source: 'ag_hg_ppt', target: 'ag_sol', type: 'actionEdge', data: { label: 'เติม NH3 6M', icon: '💧', description: 'เงิน (Ag) ละลายเป็นแอมมีนคอมเพล็กซ์' } },
+    { id: 'e_ag_hg_nh3_1', source: 'ag_hg_ppt', target: 'hg_conf', type: 'actionEdge', data: { label: 'เติม NH3 6M', icon: '💧', reactionType: 'ปฏิกิริยารีดอกซ์', description: 'ปรอทเกิด disproportionation เป็นตะกอนสีดำ' } },
+    { id: 'e_ag_hg_nh3_2', source: 'ag_hg_ppt', target: 'ag_sol', type: 'actionEdge', data: { label: 'เติม NH3 6M', icon: '💧', reactionType: 'การเกิดสารเชิงซ้อน', description: 'เงิน (Ag) ละลายเป็นแอมมีนคอมเพล็กซ์' } },
 
-    { id: 'e_ag_conf', source: 'ag_sol', target: 'ag_conf', type: 'actionEdge', data: { label: 'เติม HNO3 6M', icon: '💧', description: 'ปรับให้เป็นกรดเพื่อให้ AgCl ตกตะกอนกลับมา' } },
+    { id: 'e_ag_conf', source: 'ag_sol', target: 'ag_conf', type: 'actionEdge', data: { label: 'เติม HNO3 6M', icon: '💧', reactionType: 'ปฏิกิริยากรด-เบส', description: 'ปรับให้เป็นกรดเพื่อให้ AgCl ตกตะกอนกลับมา (ทำลายสารเชิงซ้อน)' } },
 
     // G2,3,4 Branches
-    { id: 'e_g234_split1', source: 'g234_sol', target: 'g3_ppt', type: 'actionEdge', data: { label: 'เติม NaOH 6M + H2O2 3% & ต้ม', icon: '♨️' } },
+    { id: 'e_g234_split1', source: 'g234_sol', target: 'g3_ppt', type: 'actionEdge', data: { label: 'เติม NaOH 6M + H2O2 3% & ต้ม', icon: '♨️', reactionType: 'การตกตะกอน และ รีดอกซ์' } },
     { id: 'e_g234_split2', source: 'g234_sol', target: 'g4_sol', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀' } },
 
     // G3 Branches
-    { id: 'e_g3_split1', source: 'g3_ppt', target: 'ni_sol', type: 'actionEdge', data: { label: 'HNO3, HCl, NH3, H2O2', icon: '⚗️', description: 'สกัดนิกเกิล (Ni)' } },
+    { id: 'e_g3_split1', source: 'g3_ppt', target: 'ni_sol', type: 'actionEdge', data: { label: 'HNO3, HCl, NH3, H2O2', icon: '⚗️', reactionType: 'การเกิดสารเชิงซ้อน', description: 'สกัดนิกเกิล (Ni)' } },
     { id: 'e_g3_split2', source: 'g3_ppt', target: 'fe_mn_ppt', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀' } },
 
-    { id: 'e_ni_conf', source: 'ni_sol', target: 'ni_conf', type: 'actionEdge', data: { label: 'เติม DMG', icon: '💧' } },
+    { id: 'e_ni_conf', source: 'ni_sol', target: 'ni_conf', type: 'actionEdge', data: { label: 'เติม DMG', icon: '💧', reactionType: 'การเกิดสารเชิงซ้อน' } },
 
-    { id: 'e_fe_mn_dissolve', source: 'fe_mn_ppt', target: 'fe_mn_sol', type: 'actionEdge', data: { label: 'เติม HCl/HNO3 & ต้ม', icon: '♨️' } },
-    { id: 'e_fe_conf1', source: 'fe_mn_sol', target: 'fe_conf1', type: 'actionEdge', data: { label: 'เติม KSCN', icon: '💧' } },
-    { id: 'e_fe_conf2', source: 'fe_mn_sol', target: 'fe_conf2', type: 'actionEdge', data: { label: 'เติม K4[Fe(CN)6]', icon: '💧' } },
-    { id: 'e_mn_conf', source: 'fe_mn_sol', target: 'mn_conf', type: 'actionEdge', data: { label: 'HNO3 6M + NaBiO3', icon: '💧' } },
+    { id: 'e_fe_mn_dissolve', source: 'fe_mn_ppt', target: 'fe_mn_sol', type: 'actionEdge', data: { label: 'เติม HCl/HNO3 & ต้ม', icon: '♨️', reactionType: 'ปฏิกิริยากรด-เบส' } },
+    { id: 'e_fe_conf1', source: 'fe_mn_sol', target: 'fe_conf1', type: 'actionEdge', data: { label: 'เติม KSCN', icon: '💧', reactionType: 'การเกิดสารเชิงซ้อน' } },
+    { id: 'e_fe_conf2', source: 'fe_mn_sol', target: 'fe_conf2', type: 'actionEdge', data: { label: 'เติม K4[Fe(CN)6]', icon: '💧', reactionType: 'การตกตะกอน' } },
+    { id: 'e_mn_conf', source: 'fe_mn_sol', target: 'mn_conf', type: 'actionEdge', data: { label: 'HNO3 6M + NaBiO3', icon: '💧', reactionType: 'ปฏิกิริยารีดอกซ์' } },
 
     // G4 Branches
-    { id: 'e_g4_split1', source: 'g4_sol', target: 'al_ppt', type: 'actionEdge', data: { label: 'CH3COOH ให้เป็นกรด แล้วเติม NH3', icon: '💧' } },
-    { id: 'e_g4_split2', source: 'g4_sol', target: 'cr_zn_sol', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀' } },
+    { id: 'e_g4_split1', source: 'g4_sol', target: 'al_ppt', type: 'actionEdge', data: { label: 'CH3COOH ให้เป็นกรด แล้วเติม NH3', icon: '💧', reactionType: 'ปฏิกิริยากรด-เบส และ การตกตะกอน' } },
+    { id: 'e_g4_split2', source: 'g4_sol', target: 'cr_zn_sol', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀', reactionType: 'การเกิดสารเชิงซ้อน' } },
 
-    { id: 'e_al_conf', source: 'al_ppt', target: 'al_conf', type: 'actionEdge', data: { label: 'CH3COOH + Catechol Violet', icon: '💧' } },
+    { id: 'e_al_conf', source: 'al_ppt', target: 'al_conf', type: 'actionEdge', data: { label: 'CH3COOH + Catechol Violet', icon: '💧', reactionType: 'การเกิดสารเชิงซ้อน' } },
 
-    { id: 'e_cr_zn_split1', source: 'cr_zn_sol', target: 'cr_ppt', type: 'actionEdge', data: { label: 'เติม BaCl2 1M', icon: '💧' } },
+    { id: 'e_cr_zn_split1', source: 'cr_zn_sol', target: 'cr_ppt', type: 'actionEdge', data: { label: 'เติม BaCl2 1M', icon: '💧', reactionType: 'การตกตะกอน' } },
     { id: 'e_cr_zn_split2', source: 'cr_zn_sol', target: 'zn_sol', type: 'actionEdge', data: { label: 'เซนตริฟิวจ์', icon: '🌀' } },
 
-    { id: 'e_cr_conf', source: 'cr_ppt', target: 'cr_conf', type: 'actionEdge', data: { label: 'HNO3 + H2O2 3%', icon: '💧' } },
-    { id: 'e_zn_conf', source: 'zn_sol', target: 'zn_conf', type: 'actionEdge', data: { label: 'HCl จนเป็นกรด + K4[Fe(CN)6]', icon: '💧' } }
+    { id: 'e_cr_conf', source: 'cr_ppt', target: 'cr_conf', type: 'actionEdge', data: { label: 'HNO3 + H2O2 3%', icon: '💧', reactionType: 'ปฏิกิริยารีดอกซ์' } },
+    { id: 'e_zn_conf', source: 'zn_sol', target: 'zn_conf', type: 'actionEdge', data: { label: 'HCl จนเป็นกรด + K4[Fe(CN)6]', icon: '💧', reactionType: 'การตกตะกอน' } }
 ];

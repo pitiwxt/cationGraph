@@ -38,6 +38,11 @@ export default function ActionEdge({
                         <div className="bg-white px-3 py-1 rounded-full text-xs font-semibold shadow border border-gray-200 text-gray-700 flex items-center gap-1 cursor-default hover:bg-gray-50 transition-colors">
                             {data.icon && <span>{data.icon}</span>}
                             <span>{data.label}</span>
+                            {data.reactionType && (
+                                <span className="ml-1 px-1.5 py-0.5 bg-indigo-100 text-indigo-700 rounded text-[9px] uppercase tracking-wide border border-indigo-200">
+                                    {data.reactionType}
+                                </span>
+                            )}
                         </div>
 
                         {/* Edge Tooltip */}
